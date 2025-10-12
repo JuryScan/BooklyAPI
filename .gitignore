@@ -1,0 +1,22 @@
+#Depêndencias
+node_modules/
+
+#vari[aveis de ambiente
+.env
+.evn.*
+
+#logs
+*.log
+
+#Editor
+.vscode/
+.idea/
+
+#Sistema
+.DS_Store
+Thumbs.db
+
+#Test
+dist/
+build/
+coverage/

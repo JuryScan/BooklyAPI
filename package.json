@@ -1,0 +1,18 @@
+{
+  "name": "backend-entities",
+  "version": "1.0.0",
+  "description": "Criação de entidades em Node.Js para cadeira de Márcio. O objetivo é criar uma biblioteca no qual possui 8 entidades, sendo elas Usuário, Livro, Autor, Gênero, Empréstimo, Reserva, Avaliação e Notificação.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ítalo Cézar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
+}

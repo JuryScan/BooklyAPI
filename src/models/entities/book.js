@@ -17,6 +17,10 @@ const getBookModel = (sequelize, {DataTypes}) => {
                 notEmpty: true,
             },
         },
+        imgUrl: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
         description: {
             type: DataTypes.STRING(150),
             allowNull: false,
@@ -36,6 +40,22 @@ const getBookModel = (sequelize, {DataTypes}) => {
 
         book.hasMany(models.review, {onDelete: "CASCADE"});
     };
+
+    book.findAllByAuthorId = async(authorId) => {
+        return await book.findAll({
+            where: {
+                AuthorId: authorId
+            }
+        });
+    }
+
+    book.findAllByGenderId = async(genderId) => {
+        return await book.findAll({
+            where: {
+                GenderId: genderId
+            }
+        });
+    }
 
     return book;
 };

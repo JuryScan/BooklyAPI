@@ -25,7 +25,6 @@ const sequelize = new Sequelize(process.env.POSTGRES_URL, {
 const models = {
   author: getAuthorModel(sequelize, Sequelize),
   book: getBookModel(sequelize, Sequelize),
-  gender: getGenderModel(sequelize, Sequelize)
   gender: getGenderModel(sequelize, Sequelize),
   user: getUserModel (sequelize, Sequelize),
   review: getReviewModel (sequelize, Sequelize),

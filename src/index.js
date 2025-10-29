@@ -5,8 +5,6 @@ import cors from "cors";
 import {sequelize} from "./models/index.js";
 import router from "./routes/index.js";
 
-import router from "./routes/index.js";
-
 import users from "./utils/defaultUsers.js";
 import books from "./utils/defaultBooks.js";
 
@@ -18,6 +16,8 @@ app.use(express.json());
 
 // Aplicar middlewares de rotas
 app.use("/reviews", router.review);
+app.use("/authors", router.author);
+app.use("/books", router.book);
 
 
 app.get("/", (req, res) =>{

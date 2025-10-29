@@ -1,8 +1,10 @@
+import { getAllAuthor, getAuthorById, createAuthor, updateAuthorById, deleteAuthorById } from "./author.js";
+
+const author = {getAllAuthor, getAuthorById, createAuthor, updateAuthorById, deleteAuthorById};
+
 import { getAllBooks, getBookById, createBook, updateBookById, deleteBookById} from "./book";
 
 const book = {getAllBooks, getBookById, createBook, updateBookById, deleteBookById};
-
-export { book };
 
 import { 
     getAllReviews, 
@@ -26,4 +28,4 @@ const review = {
     deleteReviewById
 };
 
-export { review };
+export { review, book, author };

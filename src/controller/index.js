@@ -1,4 +1,4 @@
-import { getAllAuthor, getAuthorById, createAuthor, updateAuthorById, deleteAuthorById } from "./author";
+import { getAllAuthor, getAuthorById, createAuthor, updateAuthorById, deleteAuthorById } from "./author.js";
 
 const author = {getAllAuthor, getAuthorById, createAuthor, updateAuthorById, deleteAuthorById};
 

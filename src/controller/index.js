@@ -2,6 +2,7 @@ import { getAllAuthor, getAuthorById, createAuthor, updateAuthorById, deleteAuth
 import { getAllBooks, getBookById, createBook, updateBookById, deleteBookById} from "./book.js";
 import { getAllReviews, getReviewsByBookId, getReviewById, getAvgReviewsByBookId, getReviewsByUserId, createReview, updateReviewById, deleteReviewById 
 } from "./review.js";
+import { getAllUsers, getUserById, createUser, updateUserById, deleteUserById } from "./user.js";
 
 const book = {
     getAllBooks, 
@@ -30,4 +31,12 @@ const review = {
     deleteReviewById
 };
 
-export { review, book, author };
+const user = {
+    getAllUsers,
+    getUserById,
+    createUser,
+    updateUserById,
+    deleteUserById
+}
+
+export { review, book, author, user };

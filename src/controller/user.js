@@ -90,4 +90,10 @@ const deleteUserById = async (req, res) => {
 
 };
 
-export {getAllUsers, getUserById, createUser, updateUserById, deleteUserById}
+export {
+    getAllUsers, 
+    getUserById, 
+    createUser, 
+    updateUserById, 
+    deleteUserById
+}

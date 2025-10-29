@@ -27,30 +27,16 @@ const getBookModel = (sequelize, {DataTypes}) => {
         year: {
             type:DataTypes.SMALLINT,
             allowNull: false,
-        },
-        authorId: {
-            type: DataTypes.UUID,
-            allowNull: false,
-            validate: {
-                notEmpty: true,
-            },
-        },
-        genderId: {
-            type: DataTypes.UUID,
-            allowNull: false,
-            validate: {
-                notEmpty: true,
-            },
-        },
+        }
     });
 
     book.associate = (models) =>{
-        book.belongsTo (models.author, {foreignKey: "authorId"});
+        book.belongsTo(models.author);
+        book.belongsTo(models.gender);
+
+        book.hasMany(models.review, {onDelete: "CASCADE"});
     };
 
-    book.associate = (models) =>{
-        book.belongsTo (models.gender, {foreignKey: "genderId"});
-    };
     return book;
 };
 

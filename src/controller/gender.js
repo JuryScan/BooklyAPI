@@ -4,9 +4,9 @@ const Gender = models.gender
 
 const getAllGenders = async (req, res) => {
     try{
-        const gender = await Review.findAll();
+        const gender = await Gender.findAll();
         if(!gender || gender.lengh == 0){
-            return res.status(404).jason({message: "Nenhum genero encontrado"});
+            return res.status(404).jason({message: "Nenhum gênero encontrado"});
         }
 
         res.status(200).json({

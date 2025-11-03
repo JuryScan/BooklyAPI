@@ -1,3 +1,4 @@
+import bcrypt from "bcryptjs";
 import models from "../models/index.js"
 
 const User = models.user;
@@ -33,16 +34,19 @@ const getUserById = async (req, res) => {
 
 const createUser = async (req, res) => {
     try{
-        const {id, name, email, password} = req.body;
+        const {name, email, password, description, profilePhotorl} = req.body;
         const user = await User.create({
-            id,
-            name,
-            email,
-            password
-        })
+            name: name,
+            email: email,
+            password: bcrypt.hash(password, 10),
+            description: description,
+            profilePhotorl: profilePhotorl
+        });
 
-        res.status(201).json({message: "Usuário criado com sucesso", data: user});
-        
+        res.status(201).json({
+            message: "Usuário criado com sucesso", 
+            data: user
+        });
     }catch (error){
         res.status(500).json({message: "Erro ao criar um usuário", error: error.message});
     }

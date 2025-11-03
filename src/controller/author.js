@@ -34,12 +34,12 @@ const getAuthorById = async (req, res) => {
 
 const createAuthor = async (req, res) => {
     try{
-        const {id, name, nationality, birthDate} = req.body
+        const {name, nationality, birthDate, bio} = req.body
         const author = await Author.create({
-            id,
-            name,
-            nationality,
-            birthDate
+            name: name,
+            nationality: nationality,
+            birthDate: birthDate,
+            bio: bio
         });
 
         res.status(201).json({message: "Autor(a) criado com sucesso", data: author});

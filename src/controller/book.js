@@ -49,7 +49,7 @@ const getBookById = async (req, res) => {
 //TODO adicionar lógica de criação de autor caso ainda não exista
 const createBook = async (req, res) => {
     try{
-        const {id, title, description, year, imgUrl} = req.body;
+        const {title, description, year, imgUrl} = req.body;
         const {authorId, genderId} = req.query;
 
         if (!authorId || !genderId){
@@ -57,13 +57,12 @@ const createBook = async (req, res) => {
         }
 
         const book = await Book.create({
-            id,
-            title,
-            description,
-            year,
-            authorId,
-            genderId,
-            imgUrl
+            title: title,
+            description: description,
+            year: year,
+            AuthorId: authorId,
+            GenderId: genderId,
+            imgUrl: imgUrl
         });
 
         res.status(201).json({

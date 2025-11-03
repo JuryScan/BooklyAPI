@@ -43,7 +43,7 @@ const getGenderById = async (req, res) => {
 
 const createGender = async (req, res) => {
     try {
-        const {name} = req.body;
+        const {name, description} = req.body;
         const gender = await Gender.findOne({
             where: {name}
         });
@@ -51,7 +51,10 @@ const createGender = async (req, res) => {
             return res.status(409).json({message: "Gênero já existe"});
         }
 
-        const newGender = await Gender.create({name});
+        const newGender = await Gender.create({
+            name: name,
+            description: description
+        });
 
         res.status(201).json({
             message: "Gênero criado com sucesso",

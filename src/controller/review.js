@@ -42,10 +42,10 @@ const createReview = async (req, res) =>  {
         }
 
         const review = await Review.create({
-            userId,
-            bookId,
-            rate,
-            comment
+            UserId: userId,
+            BookId: bookId,
+            rate: rate,
+            comment: comment
         });
 
         res.status(201).json({
